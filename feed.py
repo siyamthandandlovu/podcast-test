@@ -12,14 +12,15 @@ with open('feed.yaml','r') as file:
 
 channelElement = xmltree.SubElement(rssElement,'channel')
 
+linkPrefix = yamldata['link']
+
 xmltree.SubElement(channelElement, 'title').text = yamldata['title']
-xmltree.SubElement(channelElement, 'link').text = yamldata['link']
-xmltree.SubElement(channelElement, 'lang').text = yamldata['lang']
-xmltree.SubElement(channelElement, 'title').text = yamldata['title']
-xmltree.SubElement(channelElement, 'title').text = yamldata['title']
-xmltree.SubElement(channelElement, 'title').text = yamldata['title']
-xmltree.SubElement(channelElement, 'title').text = yamldata['title']
-xmltree.SubElement(channelElement, 'title').text = yamldata['title']
+xmltree.SubElement(channelElement, 'format').text = yamldata['format']
+xmltree.SubElement(channelElement, 'subtitle').text = yamldata['subtitle']
+xmltree.SubElement(channelElement, 'language').text = yamldata['language']
+xmltree.SubElement(channelElement, 'itunes:author').text = yamldata['author']
+xmltree.SubElement(channelElement, 'description').text = yamldata['description']
+xmltree.SubElement(channelElement, 'itunes:image').text = yamldata['image']
 
 outputTree = xmltree.ElementTree(rssElement)
 outputTree.write('podcast.xml',encoding='UTF-8',xml_declaration=True)
