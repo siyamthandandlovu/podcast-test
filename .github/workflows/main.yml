@@ -23,5 +23,3 @@ jobs:
           git add .
           git commit -m "Feed updated"
           git push
-          
-        
